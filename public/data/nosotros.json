@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Giselle Arga",
+    "email": "giselle_arga@gmail.com",
+    "puesto": "CEO",
+    "foto": "/images/integrantes/ceo.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Laura Contreras",
+    "email": "lauraContreras@gmail.com",
+    "puesto": "Supervisora Comercial",
+    "foto": "/images/integrantes/supervisora.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Maxi Ojeda",
+    "email": "maxi_ojeda@gmail.com",
+    "puesto": "Director de Marketing",
+    "foto": "/images/integrantes/cmo.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Luna Fernández",
+    "email": "luna_fernandez@gmail.com",
+    "puesto": "Desarrolladora Web",
+    "foto": "/images/integrantes/developer.jpg"
+  }
+]

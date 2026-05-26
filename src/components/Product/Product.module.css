@@ -1,0 +1,115 @@
+.cardProduct {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff7f6;
+  color: #2e2e2e;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  box-shadow: 5px 2px 4px #c53678;
+  overflow: hidden;
+  row-gap: 10px;
+}
+
+.imageContainer {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  row-gap: 15px;
+}
+
+.cardBody p {
+  font-weight: bold;
+  color: #666666;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.quantityControls button {
+  flex: 1;
+  background-color: #c53678;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.quantityControls span {
+  font-weight: 600;
+  background-color: #c53678;
+  color: #fff;
+  margin: 0 10px;
+  border-radius: 40px;
+  border: 2px solid #c53678;
+  padding: 12px 20px;
+}
+
+.cartActions {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.cartButton {
+  background-color: #c53678;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.favButton {
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  color: #c53678;
+  font-size: 1rem;
+  padding: 12px;
+  width: 20%;
+  cursor: pointer;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 3rem;
+  color: #ebf5c2;
+  cursor: pointer;
+}
+
+.cardProduct:hover .overlay {
+  opacity: 1;
+}

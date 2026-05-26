@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nombre": "Estante Aéreo",
+    "precio": 85000,
+    "stock": 14,
+    "imagen": "/images/productos/estanteAereo.jpg",
+    "destacado": true,
+    "detalles": "Muebles multifuncionales de pared para gatos: Este es un sistema multifuncional de estantes para gatos que puede satisfacer las diferentes necesidades de los gatos y mejorar su bienestar. El puente para gatos crea un área perfecta para que los gatos observen y descansen desde arriba. "
+  },
+  {
+    "id": 2,
+    "nombre": "Cama Sofa",
+    "precio": 60000,
+    "stock": 8,
+    "imagen": "/images/productos/sofaCama.jpg",
+    "destacado": true,
+    "detalles": "Lindo sofá cama para gatos de interior, con forro polar de pana suave de alta calidad. Nuestras fundas de sofá son desmontables individualmente y lavables a máquina para una limpieza y mantenimiento más sencillos"
+  },
+  {
+    "id": 3,
+    "nombre": "Gimnasio Rascador",
+    "precio": 220000,
+    "stock": 4,
+    "imagen": "/images/productos/gimnasioGatos.jpg",
+    "destacado": true,
+    "detalles": "Árbol para gatos de interior. Perfecto para gatos a los que les encanta tomar siestas, esconderse o disfrutar de un descanso sin molestias después del tiempo de juego activo. Materiales de primera calidad y postes rascadores duraderos: los postes de cuerda de sisal natural hechos a mano están firmemente envueltos para soportar arañazos constantes y promover garras saludables. Cubierto en tela de felpa gruesa que admite mascotas, con una base reforzada para mayor comodidad, seguridad y estabilidad"
+  },
+  {
+    "id": 4,
+    "nombre": "Pirámide Cama",
+    "precio": 65000,
+    "stock": 20,
+    "imagen": "/images/productos/piramideCama.jpg",
+    "destacado": false,
+    "detalles": "Cama tipo pirámide, que ofrece un área de descanso abierta. Equipada con un almohadón suave extraíble y lavable, esta cama para gatos asegura una fácil limpieza y mantenimiento, manteniendo la cama fresca e higiénica para la comodidad de tu gato."
+  },
+  {
+    "id": 5,
+    "nombre": "Cama Circular",
+    "precio": 40000,
+    "stock": 30,
+    "imagen": "/images/productos/camaCircular.jpg",
+    "destacado": false,
+    "detalles": "Cama relajante para gatos de interiores, lavable, pequeña, antideslizante, redonda, mullida, afelpada, de piel sintética. Esta cama con forma de dona es ideal para aquellos gatos a los que les encanta acurrucarse. El borde elevado acurruca a tu gato al ofrecer un soporte óptimo para la cabeza y el cuello, y una sensación de seguridad. El relleno ultrasuave de alta calidad ofrece alivio para el dolor en articulaciones y músculos."
+  },
+  {
+    "id": 6,
+    "nombre": "Cama Medialuna",
+    "precio": 45000,
+    "stock": 20,
+    "imagen": "/images/productos/camaMedialuna.jpg",
+    "destacado": false,
+    "detalles": "Crea un ambiente de descanso acogedor para que tu querido compañero experimente la máxima relajación."
+  },
+  {
+    "id": 7,
+    "nombre": "Estante Aéreo 2 Estantes",
+    "precio": 65000,
+    "stock": 10,
+    "imagen": "/images/productos/estanteAereodos.jpg",
+    "destacado": false,
+    "detalles": "Este es un sistema multifuncional de estantes para gatos que puede satisfacer las diferentes necesidades de los gatos y mejorar su bienestar. El puente para gatos crea un área perfecta para que los gatos observen y descansen desde arriba."
+  },
+  {
+    "id": 8,
+    "nombre": "Tunel Arcoiris",
+    "precio": 55000,
+    "stock": 20,
+    "imagen": "/images/productos/tunelArcoiris.jpg",
+    "destacado": true,
+    "detalles": "Duradero y espacioso: nuestros túneles para gatos de interior están construidos para durar con materiales de alta calidad que son duraderos. El diseño espacioso permite que tus amigos peludos exploren y jueguen libremente."
+  }
+]

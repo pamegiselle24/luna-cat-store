@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e06aa3;
+  padding: 0.6rem;
+}
+
+.brandLink {
+  max-width: 50px;
+}
+
+.brandLink img {
+  width: 100%;
+}
+
+.headerList {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.headerList > li {
+  list-style-type: none;
+}
+
+.headerList a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.cart {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .headerList {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .brandLink {
+    max-width: 40px;
+  }
+
+  .brandLink img {
+    width: 100%;
+  }
+}
