@@ -1,11 +1,12 @@
 .cardContact {
-  min-height: 150px;
+  min-height: 160px;
   display: flex;
   overflow: hidden;
-  background-color: #fff7f6;
-  color: #2e2e2e;
-  border: 1px solid #e06aa3;
-  border-radius: 20px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
 }
 
 .imgContainer {
@@ -26,21 +27,35 @@
 .cardBody {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 12px;
   row-gap: 15px;
 }
 
-.cardBody p {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #2e2e2e;
-  background-color: unset;
-  padding: unset;
+.cardBody h3 {
+  margin: 0;
+  font-family: "Baloo 2", sans-serif;
+  color: var(--color-primary-dark);
 }
 
 .cardBody h4 {
-  color: #e06aa3;
-  margin-bottom: 20px;
+  margin: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.linkedin:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
 }

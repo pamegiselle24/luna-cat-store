@@ -2,51 +2,151 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e06aa3;
-  padding: 0.6rem;
+  gap: 1rem;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--color-primary);
 }
 
 .brandLink {
-  max-width: 50px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.brandLink img {
-  width: 100%;
+.brandText {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.nav {
+  flex: 1;
 }
 
 .headerList {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  margin: 0;
+  padding: 0;
 }
 
-.headerList > li {
-  list-style-type: none;
+.headerList li {
+  list-style: none;
 }
 
-.headerList a {
+.navLink {
   text-decoration: none;
   color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-text);
 }
 
 .cart {
-  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.adminLink {
+  text-decoration: none;
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.adminLink:hover {
+  background-color: var(--color-bg);
+}
+
+.greeting {
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logoutButton {
+  padding: 6px 14px;
+  border: 2px solid #fff;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: #fff;
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .headerList {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 600px) {
+  .brandText {
+    font-size: 1.1rem;
+  }
+
   .headerList {
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0;
-  }
-
-  .brandLink {
-    max-width: 40px;
-  }
-
-  .brandLink img {
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    gap: 0.7rem;
+  }
+
+  .headerList li {
+    width: 100%;
+  }
+
+  .navLink,
+  .adminLink,
+  .cart {
+    display: block;
+    text-align: center;
+  }
+
+  .logoutButton {
+    width: 100%;
+  }
+
+  .greeting {
+    max-width: none;
+    text-align: center;
   }
 }

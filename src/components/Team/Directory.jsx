@@ -1,11 +1,28 @@
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 import { useState, useEffect } from "react";
 import { CardContact } from "./CardContact/CardContact";
 
 export const Directory = () => {
-  const [contacts, setContacts] = useState([]);
+  const [team, setTeam] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const teamDB = collection(db, "equipo");
+
+    getDocs(teamDB)
+      .then((res) => {
+        setTeam(res.docs.map((doc) => ({ ...doc.data() })));
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+  /*
   useEffect(() => {
     fetch("/data/nosotros.json")
       .then((res) => {
@@ -21,7 +38,7 @@ export const Directory = () => {
         setIsLoading(false);
       });
   }, []);
-
+*/
   if (isLoading) {
     return <p>Cargando equipo, por favor espere...</p>;
   }
@@ -31,8 +48,8 @@ export const Directory = () => {
 
   return (
     <div className="contacts-container">
-      {contacts.map((contact) => (
-        <CardContact key={contact.id} {...contact} />
+      {team.map((item) => (
+        <CardContact key={item.id} {...item} />
       ))}
     </div>
   );

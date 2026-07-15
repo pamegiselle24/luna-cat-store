@@ -1,0 +1,99 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-family: "Baloo 2", sans-serif;
+  color: var(--color-primary-dark);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+.listTitle {
+  font-family: "Baloo 2", sans-serif;
+  color: var(--color-text);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 0;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardInfo {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.cardPrice {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.cardActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.editButton {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.editButton:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.deleteButton {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: var(--color-danger);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.deleteButton:hover {
+  background-color: var(--color-danger);
+  color: #fff;
+}

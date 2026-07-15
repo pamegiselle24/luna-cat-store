@@ -2,25 +2,24 @@ import { useState } from "react";
 import styles from "./Product.module.css";
 import { TbEyeSearch } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
 export const Product = ({ producto }) => {
   const { nombre, precio, stock, imagen, id } = producto;
-  const [cantidad, setCantidad] = useState(0);
   const [esFavorito, setEsFavorito] = useState(false);
+  const { addToCart, getCurrentQuantity, decreaseQuantity } = useCart();
 
-  const agregarAlCarrito = () => {
-    setCantidad(1);
-  };
+  const currentQuantity = getCurrentQuantity(id);
 
   const incrementar = () => {
-    if (cantidad < stock) {
-      setCantidad((prev) => prev + 1);
+    if (currentQuantity < stock) {
+      addToCart(producto, 1);
     }
   };
 
   const decrementar = () => {
-    if (cantidad < 1) return;
-    setCantidad((prev) => prev - 1);
+    if (currentQuantity < 1) return;
+    decreaseQuantity(producto);
   };
 
   return (
@@ -40,14 +39,17 @@ export const Product = ({ producto }) => {
         <p>Stock disponible: {stock}</p>
 
         <div className={styles.cartActions}>
-          {cantidad === 0 ? (
-            <button className={styles.cartButton} onClick={agregarAlCarrito}>
+          {currentQuantity === 0 ? (
+            <button
+              className={styles.cartButton}
+              onClick={() => addToCart(producto, 1)}
+            >
               Agregar al Carrito
             </button>
           ) : (
             <div className={styles.quantityControls}>
               <button onClick={decrementar}>-</button>
-              <span>{cantidad}</span>
+              <span>{currentQuantity}</span>
               <button onClick={incrementar}>+</button>
             </div>
           )}

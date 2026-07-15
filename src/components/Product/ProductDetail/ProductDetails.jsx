@@ -1,3 +1,5 @@
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../firebase/config";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
@@ -9,11 +11,34 @@ export const ProductDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    if (!id) return;
+
+    const queryId = query(
+      collection(db, "productos"),
+      where("id", "==", Number(id)),
+    );
+
+    getDocs(queryId)
+      .then((res) => {
+        if (res.empty) {
+          console.log("No se encontró el producto");
+          return;
+        }
+        setProducto(res.docs[0].data());
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [id]);
+
+  //Antes
+  /*
+  useEffect(() => {
     fetch("/data/productos.json")
       .then((res) => {
-        if (!res.ok) {
-          throw new Error("No se pudo cargar la información del producto");
-        }
         return res.json();
       })
       .then((data) => {
@@ -27,7 +52,7 @@ export const ProductDetails = () => {
         setIsLoading(false);
       });
   }, [id]);
-
+*/
   if (isLoading) {
     return <p>Cargando detalle del producto...</p>;
   }

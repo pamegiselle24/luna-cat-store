@@ -1,3 +1,5 @@
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 import { useState, useEffect } from "react";
 import { ProductList } from "./ProductList";
 
@@ -6,8 +8,22 @@ export const ProductListContainer = ({ mensaje, destacados }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const productosDestacados = productos.filter((prod) => prod.destacado);
+  useEffect(() => {
+    const productsDB = collection(db, "productos");
 
+    getDocs(productsDB)
+      .then((res) => {
+        setProductos(res.docs.map((doc) => ({ ...doc.data() })));
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  /*
   useEffect(() => {
     fetch("/data/productos.json")
       .then((respuesta) => {
@@ -26,7 +42,7 @@ export const ProductListContainer = ({ mensaje, destacados }) => {
         setIsLoading(false);
       });
   }, []);
-
+*/
   if (isLoading) {
     return <p>Cargando productos, por favor espere...</p>;
   }
@@ -38,7 +54,11 @@ export const ProductListContainer = ({ mensaje, destacados }) => {
     <>
       <h2 className="container-subtitle">{mensaje}</h2>
       <div className="container-products">
-        <ProductList productos={destacados ? productosDestacados : productos} />
+        <ProductList
+          productos={
+            destacados ? productos.filter((prod) => prod.destacado) : productos
+          }
+        />
       </div>
     </>
   );
